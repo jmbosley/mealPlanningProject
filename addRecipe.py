@@ -16,7 +16,7 @@ cookbookFolderLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/Cookbook/'
 # Display Text
 recipeTitle = "Title: "
 divider = "-----------------------"
-ingredientTypes = "Produce:\n\n"+divider+"Meat:\n\n"+divider+"Canned:\n\n"+divider+"Dairy:\n\n"+divider+"Other:\n\n"
+ingredientTypes = "Produce:\n"+divider+"\nMeat:\n"+divider+"\nCanned:\n"+divider+"\nDairy:\n"+divider+"\nOther:\n\n"
 
 
 while True:
