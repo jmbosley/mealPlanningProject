@@ -7,6 +7,8 @@ homepageActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/ho
 
 # Cookbook sub pages
 addRecipeActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/addRecipeActions.txt'
+displayRecipeListLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/displayRecipeList.txt'
+
 
 cookbookMessage = "Welcome to your Cookbook.\n Actions:\n"
 action1 = "1) Display Recipe List\n"
@@ -35,8 +37,10 @@ while True:
             dispFile.close()
 
         # Selector redirects
-        if read_data == "1":
-            print("1) Display Recipe List\n")
+        if read_data == "1": # displays Recipe List
+            addRecipeFile = open(displayRecipeListLoc, 'w')
+            addRecipeFile.write("start")
+            addRecipeFile.close()
         elif read_data == "2": # add recipe
             addRecipeFile = open(addRecipeActLoc, 'w')
             addRecipeFile.write("start")
