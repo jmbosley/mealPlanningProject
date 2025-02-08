@@ -9,6 +9,7 @@ homepageActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/ho
 
 # Cookbook sub pages
 addRecipeActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/addRecipeActions.txt'
+deleteRecipeLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/deleteRecipeActions.txt'
 
 while True:
     ogTime = os.path.getmtime(displayActLoc)
@@ -58,17 +59,28 @@ while True:
                     cookFile.close()
             elif read_data[5:9] == "dili":
                 if read_data[10:14] == "empt":
-                    print("Your cookbook is empty. Please add some recipes using 'Add Recipe' option")
+                    print(read_data[14:])
                     cookFile = open(cookbookActLoc, 'w')
                     cookFile.write("start")
                     cookFile.close()
                 if read_data[10:14] == "list":
                     print(read_data[14:])
-                    userInput = input("Type anything then hit enter to return to cookbook menu.")
+                    userInput = input("Hit enter to return to cookbook menu.")
                     cookFile = open(cookbookActLoc, 'w')
                     cookFile.write("start")
                     cookFile.close()
-
+            elif read_data[5:9] == "dele":
+                if read_data[10:14] == "star" or read_data[10:14] == "conf":
+                    print(read_data[14:])
+                    userInput = input()
+                    deleteFile = open(deleteRecipeLoc, 'w')
+                    deleteFile.write(userInput)
+                    deleteFile.close()
+                elif read_data[10:14] == "succ" or read_data[10:14] == "fail":
+                    print(read_data[14:])
+                    cookFile = open(cookbookActLoc, 'w')
+                    cookFile.write("start")
+                    cookFile.close()
         # shopping list actions
         elif read_data[:4] == "shopl":
             print("shopl")

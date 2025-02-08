@@ -29,7 +29,7 @@ while True:
         directory = os.listdir(cookbookFolderLoc)
         if len(directory) == 0: # directry is empty
             addRecipeFile = open(displayRecipeListLoc, 'w')
-            addRecipeFile.write("cook:dili:empt")
+            addRecipeFile.write("cook:dili:emptYour cookbook is empty. Please add some recipes using 'Add Recipe' option")
             addRecipeFile.close()
         else:
             stringOutput = openingText

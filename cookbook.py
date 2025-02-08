@@ -8,6 +8,8 @@ homepageActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/ho
 # Cookbook sub pages
 addRecipeActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/addRecipeActions.txt'
 displayRecipeListLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/displayRecipeList.txt'
+deleteRecipeLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/deleteRecipeActions.txt'
+
 
 
 cookbookMessage = "Welcome to your Cookbook.\n Actions:\n"
@@ -47,8 +49,10 @@ while True:
             addRecipeFile.close()
         elif read_data == "3":
             print("3) Edit Recipe\n")
-        elif read_data == "4":
-            print("4) Delete Recipe\n")
+        elif read_data == "4": # deletes recipe
+            addRecipeFile = open(deleteRecipeLoc, 'w')
+            addRecipeFile.write("start")
+            addRecipeFile.close()
         elif read_data == "5":
             print("5) Display Recipe\n")
         elif read_data == "6":
