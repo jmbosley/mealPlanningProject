@@ -1,6 +1,6 @@
 # Author: Julie Bosley
 # Updated: 02/08/2025
-# Description: Microservice for adding new recipes
+# Description: Microservice for adding new recipe
 
 import time
 import os
