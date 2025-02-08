@@ -34,10 +34,10 @@ while True:
             dispFile.write("cook:disp" + cookbookwelcome)
             dispFile.close()
 
-        # Redirect to Cookbook
+        # Selector redirects
         if read_data == "1":
             print("1) Display Recipe List\n")
-        elif read_data == "2":
+        elif read_data == "2": # add recipe
             addRecipeFile = open(addRecipeActLoc, 'w')
             addRecipeFile.write("start")
             addRecipeFile.close()

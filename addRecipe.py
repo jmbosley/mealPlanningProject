@@ -7,10 +7,12 @@ homepageActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/ho
 
 # Cookbook sub pages
 addRecipeActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/addRecipeActions.txt'
+cookbookFolderLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/Cookbook/'
 
 # Display Text
 recipeTitle = "Title: "
-recipeProduce = "Produce:\n"
+divider = "-----------------------"
+ingredientTypes = "Produce:\n\n"+divider+"Meat:\n\n"+divider+"Canned:\n\n"+divider+"Dairy:\n\n"+divider+"Other:\n\n"
 
 
 while True:
@@ -25,35 +27,25 @@ while True:
 # Get Recipe Name and create File
     if read_data == "start":
         dispFile = open(displayActLoc, 'w')
-        dispFile.write("cook:addr")
+        dispFile.write("cook:addr:gett") # get the title
         dispFile.close()
     else:
-        newRecipe = open(read_data".txt","w")
-# Add Produce
-# Add Meat
-# Add Canned
-# Add Dairy
-# Add Other
-
-     
-
-     
-    
-        # Display Home Page
-        
-
-        # Redirect to Cookbook
-        if read_data == "1":
-            print("1) Display Recipe List\n")
-        elif read_data == "2":
-            print("2) Add Recipe\n")
-        elif read_data == "3":
-            print("3) Edit Recipe\n")
-        elif read_data == "4":
-            print("4) Delete Recipe\n")
-        elif read_data == "5":
-            print("5) Display Recipe\n")
-        elif read_data == "6":
-            print("6) Go to Home\n")
-        elif read_data == "7":
-            print("7) Go to Shopping List Editor\n")
+        # Does this recipe already exist?
+        if os.path.isfile(cookbookFolderLoc + read_data + '.txt'):
+            # if not create the recipe
+            dispFile = open(displayActLoc, 'w')
+            dispFile.write("cook:addr:exis") # file already exists
+            dispFile.close()
+        else:
+            newRecipePath = cookbookFolderLoc + read_data + '.txt'
+            newRecipe = open(newRecipePath,"w")
+            newRecipe.write(recipeTitle+read_data+'\n'+ingredientTypes) # fill in template
+            newRecipe.close()
+            editor = "gnome-terminal -e 'gedit "+newRecipePath+"'"
+            os.system(editor)
+            ogTime = os.path.getmtime(newRecipePath)
+            while (os.path.getmtime(newRecipePath) <= ogTime):
+                time.sleep(1)
+            dispFile = open(displayActLoc, 'w')
+            dispFile.write("cook:addr:succ")  # successfully added
+            dispFile.close()

@@ -7,8 +7,8 @@ displayActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/dis
 homepageActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/homePageActions.txt'
 
 
-# CookBook
-
+# Cookbook sub pages
+addRecipeActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/addRecipeActions.txt'
 
 while True:
     ogTime = os.path.getmtime(displayActLoc)
@@ -39,7 +39,25 @@ while True:
                 cookbookFile.write(userInput)
                 cookbookFile.close()
             elif read_data[5:9] == "addr":
-                print("add Recipe")
+                if read_data[10:] == "gett":
+                    print("Please type the name of your new recipe below")
+                    userInput = str(input(": "))
+                    addRecipeFile = open(addRecipeActLoc, 'w')
+                    addRecipeFile.write(userInput)
+                    addRecipeFile.close()
+                elif read_data[10:] == "exis":
+                    print(userInput + " already exists.")
+                    # go back to cookbook
+                    cookFile = open(cookbookActLoc, 'w')
+                    cookFile.write("start")
+                    cookFile.close()
+                elif read_data[10:] == "succ":
+                    print(userInput+ " was successfully added!")
+                    cookFile = open(cookbookActLoc, 'w')
+                    cookFile.write("start")
+                    cookFile.close()
+
+
         # shopping list actions
         elif read_data[:4] == "shopl":
             print("shopl")
