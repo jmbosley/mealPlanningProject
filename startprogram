@@ -1,4 +1,5 @@
 #!/bin/bash
+
 gnome-terminal -e "python3 displayService.py"
 gnome-terminal -e "python3 homePage.py"
 gnome-terminal -e "python3 cookbook.py"

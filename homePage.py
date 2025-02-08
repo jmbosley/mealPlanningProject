@@ -1,3 +1,7 @@
+# Author: Julie Bosley
+# Updated: 02/08/2025
+# Description: Microservice for homepage functionality
+
 import time
 import os
 # file Paths
