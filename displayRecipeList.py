@@ -6,14 +6,14 @@ import time
 import os
 
 # file Paths
-cookbookActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/cookbookActions.txt'
-displayActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/displayActions.txt'
-homepageActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/homePageActions.txt'
+cookbookActLoc = './ActionFolder/cookbookActions.txt'
+displayActLoc = './ActionFolder/displayActions.txt'
+homepageActLoc = './ActionFolder/homePageActions.txt'
 
 # Cookbook sub pages
-addRecipeActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/addRecipeActions.txt'
-displayRecipeListLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/displayRecipeList.txt'
-cookbookFolderLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/Cookbook/'
+addRecipeActLoc = './ActionFolder/addRecipeActions.txt'
+displayRecipeListLoc = './ActionFolder/displayRecipeList.txt'
+cookbookFolderLoc = './Cookbook/'
 
 #Text
 openingText = "The recipes currently in your cookbook are:\n"

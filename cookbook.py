@@ -5,14 +5,15 @@
 import time
 import os
 # file Paths
-cookbookActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/cookbookActions.txt'
-displayActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/displayActions.txt'
-homepageActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/homePageActions.txt'
+cookbookActLoc = './ActionFolder/cookbookActions.txt'
+displayActLoc = './ActionFolder/displayActions.txt'
+homepageActLoc = './ActionFolder/homePageActions.txt'
+shopListActLoc = './ActionFolder/shoppingListActions.txt'
 
 # Cookbook sub pages
-addRecipeActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/addRecipeActions.txt'
-displayRecipeListLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/displayRecipeList.txt'
-deleteRecipeLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/deleteRecipeActions.txt'
+addRecipeActLoc = './ActionFolder/addRecipeActions.txt'
+displayRecipeListLoc = './ActionFolder/displayRecipeList.txt'
+deleteRecipeLoc = './ActionFolder/deleteRecipeActions.txt'
 
 
 
@@ -60,9 +61,13 @@ while True:
         elif read_data == "5":
             print("5) Display Recipe\n")
         elif read_data == "6":
-            print("6) Go to Home\n")
+            cookFile = open(homepageActLoc, 'w')
+            cookFile.write("start")
+            cookFile.close()
         elif read_data == "7":
-            print("7) Go to Shopping List Editor\n")
+            cookFile = open(shopListActLoc, 'w')
+            cookFile.write("start")
+            cookFile.close()
             
 
     # Redirect to Shopping List

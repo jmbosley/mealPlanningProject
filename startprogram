@@ -6,6 +6,9 @@ gnome-terminal -e "python3 cookbook.py"
 gnome-terminal -e "python3 addRecipe.py"
 gnome-terminal -e "python3 displayRecipeList.py"
 gnome-terminal -e "python3 deleteRecipe.py"
+gnome-terminal -e "python3 shoppingList.py"
+gnome-terminal -e "python3 removeRecipeService.py"
+
 
 
 

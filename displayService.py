@@ -6,14 +6,16 @@ import time
 import os
 
 # file Paths
-cookbookActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/cookbookActions.txt'
-displayActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/displayActions.txt'
-homepageActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/homePageActions.txt'
+cookbookActLoc = './ActionFolder/cookbookActions.txt'
+displayActLoc = './ActionFolder/displayActions.txt'
+homepageActLoc = './ActionFolder/homePageActions.txt'
+shopListActLoc = './ActionFolder/shoppingListActions.txt'
+
 
 
 # Cookbook sub pages
-addRecipeActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/addRecipeActions.txt'
-deleteRecipeLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/deleteRecipeActions.txt'
+addRecipeActLoc = './ActionFolder/addRecipeActions.txt'
+deleteRecipeLoc = './ActionFolder/deleteRecipeActions.txt'
 
 while True:
     ogTime = os.path.getmtime(displayActLoc)
@@ -86,8 +88,13 @@ while True:
                     cookFile.write("start")
                     cookFile.close()
         # shopping list actions
-        elif read_data[:4] == "shopl":
-            print("shopl")
+        elif read_data[:4] == "shop":
+            if read_data[5:9] == "disp":
+                print(read_data[9::])
+                userInput = str(input("Enter the item number: "))
+                shopListFile = open(shopListActLoc, 'w')
+                shopListFile.write(userInput)
+                shopListFile.close()
 
 
 # send query back

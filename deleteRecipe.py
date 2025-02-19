@@ -6,16 +6,16 @@ import time
 import os
 
 # file Paths
-cookbookActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/cookbookActions.txt'
-displayActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/displayActions.txt'
-homepageActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/homePageActions.txt'
+cookbookActLoc = './ActionFolder/cookbookActions.txt'
+displayActLoc = './ActionFolder/displayActions.txt'
+homepageActLoc = './ActionFolder/homePageActions.txt'
 
 # Cookbook sub pages
-addRecipeActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/addRecipeActions.txt'
-displayRecipeListLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/displayRecipeList.txt'
-deleteRecipeLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/deleteRecipeActions.txt'
+addRecipeActLoc = './ActionFolder/addRecipeActions.txt'
+displayRecipeListLoc = './ActionFolder/displayRecipeList.txt'
+deleteRecipeLoc = './ActionFolder/deleteRecipeActions.txt'
 
-cookbookFolderLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/Cookbook/'
+cookbookFolderLoc = './Cookbook/'
 
 
 

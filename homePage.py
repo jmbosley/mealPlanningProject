@@ -5,15 +5,16 @@
 import time
 import os
 # file Paths
-cookbookActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/cookbookActions.txt'
-displayActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/displayActions.txt'
-homepageActLoc = '/home/jmbosley/Documents/mealPlanningProjectV2/ActionFolder/homePageActions.txt'
+cookbookActLoc = './ActionFolder/cookbookActions.txt'
+displayActLoc = './ActionFolder/displayActions.txt'
+homepageActLoc = './ActionFolder/homePageActions.txt'
+shopListActLoc = './ActionFolder/shoppingListActions.txt'
 
 # Welcome Page
 welcomeHeader = "Welcome to the Shopping List Generator!\nThis Program allows you to save your recipes and use them to generate a shopping list without the hassel of having to re-write every single ingredient.\n\n"
 prompt = "Which Page would you like to access?\n"
 option1 = "1) Cookbook\n"
-option2 = "2) Shopping Cart\n"
+option2 = "2) Shopping List\n"
 homeMessage = welcomeHeader + prompt + option1 + option2
 
 # Display Home Page
@@ -36,5 +37,9 @@ while True:
             cookFile = open(cookbookActLoc, 'w')
             cookFile.write("start")
             cookFile.close()
+        elif read_data == "2":
+            shopFile = open(shopListActLoc, 'w')
+            shopFile.write("start")
+            shopFile.close()
 
     # Redirect to Shopping List
