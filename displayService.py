@@ -17,6 +17,13 @@ shopListActLoc = './ActionFolder/shoppingListActions.txt'
 addRecipeActLoc = './ActionFolder/addRecipeActions.txt'
 deleteRecipeLoc = './ActionFolder/deleteRecipeActions.txt'
 
+# ShoppingList sub pages
+dispRecpCartActLoc = './ActionFolder/displayRecipesCartActions.txt'
+addRecipCartActLoc = './ActionFolder/addRecipeCartActions.txt'
+removeRecipeCartActLoc = './ActionFolder/removeMealActions.txt'
+clearCartActLoc = './ActionFolder/clearCart.txt'
+generateListActLoc = './ActionFolder/generateShoppingList.txt'
+
 while True:
     ogTime = os.path.getmtime(displayActLoc)
     while (os.path.getmtime(displayActLoc) <= ogTime):
@@ -95,6 +102,17 @@ while True:
                 shopListFile = open(shopListActLoc, 'w')
                 shopListFile.write(userInput)
                 shopListFile.close()
-
+            elif read_data[5:9] == "remo":
+                if read_data[10:14] == "star" or read_data[10:14] == "conf":
+                    print(read_data[14:])
+                    userInput = input()
+                    removeListFile = open(removeRecipeCartActLoc, 'w')
+                    removeListFile.write(userInput)
+                    removeListFile.close()
+                elif read_data[10:14] == "done" or read_data[10:14] == "none":
+                    print(read_data[14:])
+                    shopFile = open(shopListActLoc, 'w')
+                    shopFile.write("start")
+                    shopFile.close()
 
 # send query back
