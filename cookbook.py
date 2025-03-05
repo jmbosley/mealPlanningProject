@@ -14,6 +14,7 @@ shopListActLoc = './ActionFolder/shoppingListActions.txt'
 addRecipeActLoc = './ActionFolder/addRecipeActions.txt'
 displayRecipeListLoc = './ActionFolder/displayRecipeList.txt'
 deleteRecipeLoc = './ActionFolder/deleteRecipeActions.txt'
+editRecipeLoc = './ActionFolder/editRecipeActions.txt'
 
 
 
@@ -22,10 +23,9 @@ action1 = "1) Display Recipe List\n"
 action2 = "2) Add Recipe\n"
 action3 = "3) Edit Recipe\n"
 action4 = "4) Delete Recipe\n"
-action5 = "5) Display Recipe\n"
-action6 = "6) Go to Home\n"
-action7 = "7) Go to Shopping List Editor\n"
-cookbookwelcome = cookbookMessage + action1 + action2 + action3 + action4 + action5 + action6 + action7
+action5 = "5) Go to Home\n"
+action6 = "6) Go to Shopping List Editor\n"
+cookbookwelcome = cookbookMessage + action1 + action2 + action3 + action4 + action5 + action6
 
 while True:
     ogTime = os.path.getmtime(cookbookActLoc)
@@ -53,18 +53,18 @@ while True:
             addRecipeFile.write("start")
             addRecipeFile.close()
         elif read_data == "3":
-            print("3) Edit Recipe\n")
+            addRecipeFile = open(editRecipeLoc, 'w')
+            addRecipeFile.write("start")
+            addRecipeFile.close()
         elif read_data == "4": # deletes recipe
             addRecipeFile = open(deleteRecipeLoc, 'w')
             addRecipeFile.write("start")
             addRecipeFile.close()
         elif read_data == "5":
-            print("5) Display Recipe\n")
-        elif read_data == "6":
             cookFile = open(homepageActLoc, 'w')
             cookFile.write("start")
             cookFile.close()
-        elif read_data == "7":
+        elif read_data == "6":
             cookFile = open(shopListActLoc, 'w')
             cookFile.write("start")
             cookFile.close()

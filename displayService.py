@@ -11,18 +11,19 @@ displayActLoc = './ActionFolder/displayActions.txt'
 homepageActLoc = './ActionFolder/homePageActions.txt'
 shopListActLoc = './ActionFolder/shoppingListActions.txt'
 
-
-
 # Cookbook sub pages
 addRecipeActLoc = './ActionFolder/addRecipeActions.txt'
 deleteRecipeLoc = './ActionFolder/deleteRecipeActions.txt'
+editRecipeLoc = './ActionFolder/editRecipeActions.txt'
+
+# Edit Recipe
 
 # ShoppingList sub pages
 dispRecpCartActLoc = './ActionFolder/displayRecipesCartActions.txt'
 addRecipCartActLoc = './ActionFolder/addRecipeCartActions.txt'
 removeRecipeCartActLoc = './ActionFolder/removeMealActions.txt'
-clearCartActLoc = './ActionFolder/clearCart.txt'
 generateListActLoc = './ActionFolder/generateShoppingList.txt'
+
 
 while True:
     ogTime = os.path.getmtime(displayActLoc)
@@ -52,6 +53,18 @@ while True:
                 cookbookFile = open(cookbookActLoc, 'w')
                 cookbookFile.write(userInput)
                 cookbookFile.close()
+            elif read_data[5:9] == "edit":
+                if read_data[10:14] == "disp":
+                    print(read_data[15:])
+                    shopFile = open(cookbookActLoc, 'w')
+                    shopFile.write("start")
+                    shopFile.close()
+                elif read_data[10:14] == "rece":
+                    print(read_data[15:])
+                    userInput = input()
+                    addRecipeFile = open(editRecipeLoc, 'w')
+                    addRecipeFile.write(userInput)
+                    addRecipeFile.close()
             elif read_data[5:9] == "addr":
                 if read_data[10:] == "gett":
                     print("Please type the name of your new recipe below")
@@ -97,11 +110,17 @@ while True:
         # shopping list actions
         elif read_data[:4] == "shop":
             if read_data[5:9] == "disp":
-                print(read_data[9::])
-                userInput = str(input("Enter the item number: "))
-                shopListFile = open(shopListActLoc, 'w')
-                shopListFile.write(userInput)
-                shopListFile.close()
+                if read_data[10:14] == "home":
+                    print(read_data[14::])
+                    userInput = str(input("Enter the item number: "))
+                    shopListFile = open(shopListActLoc, 'w')
+                    shopListFile.write(userInput)
+                    shopListFile.close()
+                if read_data[10:14] == "plan":
+                    print(read_data[14:])
+                    shopFile = open(shopListActLoc, 'w')
+                    shopFile.write("start")
+                    shopFile.close()
             elif read_data[5:9] == "remo":
                 if read_data[10:14] == "star" or read_data[10:14] == "conf":
                     print(read_data[14:])
@@ -114,5 +133,24 @@ while True:
                     shopFile = open(shopListActLoc, 'w')
                     shopFile.write("start")
                     shopFile.close()
+            elif read_data[5:9] == "addr":
+                if read_data[10:14] == "disp":
+                    print(read_data[15:])
+                    shopFile = open(shopListActLoc, 'w')
+                    shopFile.write("start")
+                    shopFile.close()
+                elif read_data[10:14] == "rece":
+                    print(read_data[15:])
+                    userInput = input()
+                    if userInput == "no":
+                        shopFile = open(shopListActLoc, 'w')
+                        shopFile.write("start")
+                        shopFile.close()
+                    else:
+                        addRecipeFile = open(addRecipCartActLoc, 'w')
+                        addRecipeFile.write(userInput)
+                        addRecipeFile.close()
+
+
 
 # send query back

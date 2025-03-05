@@ -15,7 +15,6 @@ shopListActLoc = './ActionFolder/shoppingListActions.txt'
 dispRecpCartActLoc = './ActionFolder/displayRecipesCartActions.txt'
 addRecipCartActLoc = './ActionFolder/addRecipeCartActions.txt'
 removeRecipeCartActLoc = './ActionFolder/removeMealActions.txt'
-clearCartActLoc = './ActionFolder/clearCart.txt'
 generateListActLoc = './ActionFolder/generateShoppingList.txt'
 
 
@@ -42,7 +41,7 @@ while True:
         # Display Home Page
         if read_data == "start":
             dispFile = open(displayActLoc, 'w')
-            dispFile.write("shop:disp" + shoppingListWelcome)
+            dispFile.write("shop:disp:home" + shoppingListWelcome)
             dispFile.close()
 
         # Selector redirects
@@ -52,15 +51,15 @@ while True:
             addRecipeFile.close()
         elif read_data == "2":  # add recipe to cart
             addRecipeFile = open(addRecipCartActLoc, 'w')
-            addRecipeFile.write("start")
+            addRecipeFile.write("addr:star")
             addRecipeFile.close()
         elif read_data == "3": # Remove Recipe from Cart
             addRecipeFile = open(removeRecipeCartActLoc, 'w')
             addRecipeFile.write("start")
             addRecipeFile.close()
         elif read_data == "4":  # Clears Cart
-            addRecipeFile = open(clearCartActLoc, 'w')
-            addRecipeFile.write("start")
+            addRecipeFile = open(addRecipCartActLoc, 'w')
+            addRecipeFile.write("clear:star")
             addRecipeFile.close()
         elif read_data == "5": # Generates shopping list
             cookFile = open(generateListActLoc, 'w')

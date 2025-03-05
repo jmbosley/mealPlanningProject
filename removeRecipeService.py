@@ -1,3 +1,5 @@
+# Author: Trevor Gililland
+
 import time
 
 displayActLoc = './ActionFolder/displayActions.txt'

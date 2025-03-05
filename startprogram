@@ -8,6 +8,12 @@ gnome-terminal -e "python3 displayRecipeList.py"
 gnome-terminal -e "python3 deleteRecipe.py"
 gnome-terminal -e "python3 shoppingList.py"
 gnome-terminal -e "python3 removeRecipeService.py"
+gnome-terminal -e "python3 displayMealPlan.py"
+gnome-terminal -e "python3 addRecipeMealPlan.py"
+gnome-terminal -e "python3 generateShoppingList.py"
+gnome-terminal -e "python3 editRecipe.py"
+
+
 
 
 
